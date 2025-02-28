@@ -17,12 +17,14 @@ public class LoginResponse {
 
     @Schema(description = "User ID of the logged-in user", example = "101")
     private Long userId;
-
-    public LoginResponse(String token, String fullName, Long userId) {
-        this.token = token;
-        this.fullName = fullName;
-        this.userId = userId;
-    }
+    
+    @Schema(description = "Role ID of the logged-in user", example = "1")
+    private Integer roleId;
+//    public LoginResponse(String token, String fullName, Long userId) {
+//        this.token = token;
+//        this.fullName = fullName;
+//        this.userId = userId;
+//    }
 
 	public String getToken() {
 		return token;
@@ -44,6 +46,14 @@ public class LoginResponse {
 		return userId;
 	}
 
+	public Integer getRoleId() {
+		return roleId;
+	}
+
+	public void setRoleId(Integer roleId) {
+		this.roleId = roleId;
+	}
+
 	public void setUserId(Long userId) {
 		this.userId = userId;
 	}
@@ -53,10 +63,22 @@ public class LoginResponse {
 		// TODO Auto-generated constructor stub
 	}
 
+	public LoginResponse(String token, String fullName, Long userId, Integer roleId) {
+		super();
+		this.token = token;
+		this.fullName = fullName;
+		this.userId = userId;
+		this.roleId=roleId;
+	}
+
 	@Override
 	public String toString() {
-		return "LoginResponse [token=" + token + ", fullName=" + fullName + ", userId=" + userId + "]";
+		return "LoginResponse [token=" + token + ", fullName=" + fullName + ", userId=" + userId + ", roleId=" + roleId
+				+ "]";
 	}
+
+
+	
     
     
 }
