@@ -51,7 +51,7 @@ public class SecurityConfig {
                                          "/user/login", "/user/authenticate", "/user/welcome", "login/doctor","/actuator/**","/actuator/info/**","/health/**").permitAll()
                         
                         // Protected endpoints that require authentication
-                        .requestMatchers("/user/protected", "doctor/all").authenticated()
+                        .requestMatchers("/user/protected", "/doctor/all", "/doctor/**").authenticated()
                 )
                 
                 // Configure session management as stateless (recommended for JWT authentication)
