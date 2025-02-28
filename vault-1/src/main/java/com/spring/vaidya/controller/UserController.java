@@ -122,7 +122,7 @@ public class UserController {
         String jwt = jwtUtils.generateJwtToken(doctor.getUserEmail());
         logger.info("Doctor login successful: {}", loginRequest.getUserEmail());
 
-        LoginResponse response = new LoginResponse(jwt, doctor.getFullName(), doctor.getUserId());
+        LoginResponse response = new LoginResponse(jwt, doctor.getFullName(), doctor.getUserId(),doctor.getRoleId());
         return ResponseEntity.ok(response);
     }
 }
